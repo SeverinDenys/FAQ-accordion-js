@@ -1,0 +1,134 @@
+:root {
+  --main-color: white;
+  --Light-pink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Dark-purple: hsl(292, 42%, 14%);
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Make sure body takes up full viewport height */
+  margin: 0; /* Remove default body margin */
+  padding: 0;
+  background-color: var(--Light-pink);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0;
+  height: 20rem;
+  width: 100%;
+  background-image: url(./assets/images/background-pattern-mobile.svg);
+  background-size: 100%;
+}
+
+#container {
+  border-radius: 1rem;
+  background-color: var(--main-color);
+  padding: 1rem;
+  max-width: 30rem; /* Set maximum width for better readability */
+  position: relative;
+}
+
+#title-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.svg-title {
+  width: 3rem;
+  height: auto;
+  margin-right: 1rem;
+}
+
+#project-title {
+  font-size: 4rem;
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+}
+
+/* main body part */
+
+.section-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid red;
+}
+
+.section-container:hover {
+  color: var(--Grayish-purple);
+  cursor: pointer;
+}
+
+.section-title {
+  flex: 1; /*  helps to put the icons at the same place on the right side regardless of how many text is inside h2 */
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  font-weight: 400;
+}
+
+.add-svg-button {
+  width: 3rem;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.add-svg-button:hover {
+  cursor: pointer;
+}
+
+.textContainer {
+  display: none;
+  font-size: 1.9rem;
+}
+
+/* responsive design desktop */
+@media screen and (min-width: 810px) {
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0;
+    height: 45rem;
+    width: 100%;
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+    background-size: 100%;
+  }
+
+  #container {
+    max-width: 800px;
+  }
+  .section-container {
+    margin: 2rem 0;
+  }
+
+  #project-title {
+    font-size: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.7rem;
+  }
+
+  .add-svg-button {
+    width: 3.5rem;
+    height: auto;
+  }
+
+  .textContainer {
+    font-size: 2.3rem;
+  }
+}
